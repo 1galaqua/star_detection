@@ -17,9 +17,9 @@ def read_points_from_csv(filename):
 def make_triangles(points):
     angles = []
     for triangle in combinations(points, 3):
-        id, x1, y1 = triangle[0]
-        id, x2, y2 = triangle[1]
-        id, x3, y3 = triangle[2]
+        id_0, x1, y1 = triangle[0]
+        id_1, x2, y2 = triangle[1]
+        id_2, x3, y3 = triangle[2]
         angle1 = math.atan2(y2 - y1, x2 - x1)
         angle2 = math.atan2(y3 - y2, x3 - x2)
         angle3 = math.atan2(y1 - y3, x1 - x3)
