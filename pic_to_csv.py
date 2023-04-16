@@ -32,4 +32,4 @@ def pic_to_csv(csv_name, image):
     # Display the results
     cv2.imshow("Image 1", img)
     cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    # cv2.destroyAllWindows()
