@@ -1,9 +1,46 @@
 from pic_to_csv import pic_to_csv
-from triangels import read_points_from_csv
-
+from match import read_points_from_csv, make_triangles, compare, draw_lines
+import time
+import cv2
 
 if __name__ == "__main__":
-    pic1 = pic_to_csv("pic1", 'stars_images/image1.jpeg')
-    pic2 = pic_to_csv("pic2", 'stars_images/image2.jpeg')
-    list_pic1 = read_points_from_csv(pic1)
-    list_pic2 = read_points_from_csv(pic2)
+    # image1 = 'stars_images/image1.jpeg'
+    # image2 = 'stars_images/image2.jpeg'
+    image1 = 'boaz/fr1.jpg'
+    image2 = 'boaz/fr2.jpg'
+
+    pic_to_csv("pic1", image1)
+    pic_to_csv("pic2", image2)
+    filename = "pic1.csv"
+    points = read_points_from_csv(filename)
+    triangles = make_triangles(points)
+    # print(angles)
+
+    filename2 = "pic2.csv"
+    points2 = read_points_from_csv(filename2)
+    triangles2 = make_triangles(points2)
+
+    list1, list2 = compare(triangles, triangles2)
+    print(f"list1:{list1}")
+    print("list2", list2)
+    img1 = draw_lines(list1, "pic1", image1)
+    img2 = draw_lines(list2, "pic2", image2)
+
+    # Resize the images to have the same height
+    cv2.namedWindow("Combined Images", cv2.WINDOW_NORMAL)
+    resized_img = cv2.resizeWindow("Combined Images", (800, 800))
+    cv2.namedWindow("C", cv2.WINDOW_NORMAL)
+    resized_img = cv2.resizeWindow("C", (800, 800))
+    # Concatenate the images horizontally
+    # combined_img = cv2.hconcat([img1, img2])
+
+    # Show the combined image in a window
+    cv2.imshow('Combined Images', img1)
+    cv2.imshow('C', img2)
+
+    # Wait for a key event
+    cv2.waitKey(0)
+
+    # Close the window
+    cv2.destroyAllWindows()
+    # time.sleep(50)
