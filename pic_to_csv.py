@@ -35,6 +35,8 @@ def pic_to_csv(csv_name, image):
     cv2.destroyAllWindows()
 
 
+
+#filter out nearby stars by radius
 def duplicate_points(points):
     for i, pt in enumerate(points):
         for j, com_pt in enumerate(points):

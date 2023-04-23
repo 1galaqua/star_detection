@@ -4,8 +4,6 @@ import time
 import cv2
 
 if __name__ == "__main__":
-    # image1 = 'stars_images/image1.jpeg'
-    # image2 = 'stars_images/image2.jpeg'
     image1 = 'boaz/fr1.jpg'
     image2 = 'boaz/fr2.jpg'
 
@@ -14,15 +12,13 @@ if __name__ == "__main__":
     filename = "pic1.csv"
     points = read_points_from_csv(filename)
     triangles = make_triangles(points)
-    # print(angles)
+
 
     filename2 = "pic2.csv"
     points2 = read_points_from_csv(filename2)
     triangles2 = make_triangles(points2)
 
     list1, list2 = compare(triangles, triangles2)
-    print(f"list1:{list1}")
-    print("list2", list2)
     img1 = draw_lines(list1, "pic1", image1)
     img2 = draw_lines(list2, "pic2", image2)
 

@@ -43,7 +43,8 @@ def calculate_angle(x1, y1, x2, y2, x3, y3):
 
     return angle_in_degrees
 
-
+#make triangle by three angles
+#return list
 def make_triangles(points):
     angles = []
     for triangle in combinations(points, 3):
@@ -57,7 +58,7 @@ def make_triangles(points):
             angles.append([angle1, angle2, angle3, int(id_0), int(id_1), int(id_2)])
     return angles
 
-
+#finde similar triangles
 def compare(list1, list2):
     matches = []
     matches2 = []
@@ -68,7 +69,7 @@ def compare(list1, list2):
                 matches2.append(tuple2)
     return matches, matches2
 
-
+#illustration the stars by data of similar triangle
 def draw_lines(list_of_matches, csv_name, image):
     img = cv2.imread(image)
     for i in list_of_matches:
