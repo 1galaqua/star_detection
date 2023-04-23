@@ -12,7 +12,7 @@ def pic_to_csv(csv_name, image):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     # Create ORB detector with custom parameters
-    orb = cv2.ORB_create(nfeatures=150, scaleFactor=2, edgeThreshold=90, patchSize=16)
+    orb = cv2.ORB_create(nfeatures=80, scaleFactor=2, edgeThreshold=90, patchSize=16)
 
     # Detect keypoints and compute descriptors
     kp, des = orb.detectAndCompute(gray, None)
