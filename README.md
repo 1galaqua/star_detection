@@ -27,10 +27,19 @@ looks for similarity between the two given images.
 
 
 # Visual Data:
-#### `star detection`:
-![image](https://github.com/1galaqua/star_detection/blob/main/stars_images/image.png)
-![image](https://github.com/1galaqua/star_detection/blob/main/stars_images/image2.png)
-![image](https://github.com/1galaqua/star_detection/blob/main/stars_images/result.png)
+### star detection:
+#### original photos:
+
+<img src="https://github.com/1galaqua/star_detection/blob/main/boaz/fr1.jpg" width="300" height="300"> <img src="https://github.com/1galaqua/star_detection/blob/main/boaz/fr2.jpg" width="300" height="300">
+
+#### after detection:
+
+<img src="https://github.com/1galaqua/star_detection/blob/main/stars_images/image.png" width="300" height="300"> <img src="https://github.com/1galaqua/star_detection/blob/main/stars_images/image2.png" width="300" height="300">
+
+#### final result:
+
+<img src="https://github.com/1galaqua/star_detection/blob/main/stars_images/result.png" width="300" height="300">
+
 
 
 
