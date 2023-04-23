@@ -85,11 +85,8 @@ def draw_lines(list_of_matches, csv_name, image):
                 if row[0] == str(id3):
                     point_id3 = (int(row[1]), int(row[2]))
             if point_id3 and point_id2 and point_id1:
-                # Define the radius of the circle
-                radius = 10
-                # Define the color of the circle (in BGR format)
-                color = (0, 0, 255)  # Red
-                cv2.circle(img, point_id3, radius, color, thickness=2)
-                cv2.circle(img, point_id2, radius, color, thickness=2)
-                cv2.circle(img, point_id1, radius, color, thickness=2)
+                cv2.line(img, point_id1, point_id2, (0, 255, 0), 3)
+                cv2.line(img, point_id2, point_id3, (0, 255, 0), 3)
+                cv2.line(img, point_id3, point_id1, (0, 255, 0), 3)
+            
     return img
